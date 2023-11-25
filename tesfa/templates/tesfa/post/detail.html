@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>= Post</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      {% if post %}
+      <h1>{{ post.title }}</h1>
+      {% if post.category %}
+      <span>category:</span> {% for category in post.category.all %}
+      <p class="post-meta">{{category}}</p>
+      {% endfor %} {% else %}
+      <h2>category unknown</h2>
+      {% endif %}
+      <div class="post-content">
+        <pre>{{ post.content }}</pre>
+      </div>
+
+      {% else %}
+      <p>no content yet!</p>
+      {% endif %}
+    </div>
+  </body>
+</html>
