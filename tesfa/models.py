@@ -16,7 +16,7 @@ class Author(models.Model):
 
 class Post(models.Model):
     title = models.CharField(max_length=30 )
-    slug = models.CharField(max_length=30)
+    slug = models.SlugField(max_length=30)
     category = models.ManyToManyField(Category)
     author = models.ForeignKey( Author,  on_delete=models.CASCADE) 
     publisher = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
