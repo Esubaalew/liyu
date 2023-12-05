@@ -27,5 +27,7 @@ class Post(models.Model):
     published = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
     content = models.TextField()
+    class Meta:
+        ordering = ['-published']
     def __str__(self):
         return self.title
