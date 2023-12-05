@@ -1,41 +1,33 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>= Posts</title>
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
-  </head>
-  <body>
-    <div class="container">
-      <h1>Posts</h1>
+{% extends 'tesfa/base.html' %}
 
-      {% if published %} {% for post in published %}
-      <div class="post-card">
-        <h2>
-          <a href="{% url 'post_detail' param1=post.slug param2=post.id %}">
-            {{ post.title }}
-          </a>
-        </h2>
-        {% if post.category %}
-        <span>category:</span> {% for category in post.category.all %}
-        <p class="post-meta">{{category}}</p>
-        {% endfor %} {% else %}
-        <h2>category unknown</h2>
-        {% endif %}
+{% block title %}Posts{% endblock %}
 
-        <p class="post-meta">published:{{post.published}}</p>
-        <p class="post-content max-height">{{ post.content }}</p>
-        <a
-          href="{% url 'post_detail' param1=post.slug param2=post.id %}"
-          class="see-more"
-        >
-          see more
+{% block content %}
+  <h1>Posts</h1>
+
+  {% if published %} {% for post in published %}
+    <div class="post-card">
+      <h2>
+        <a href="{% url 'post_detail' param1=post.slug param2=post.id %}">
+          {{ post.title }}
         </a>
-      </div>
-      {% endfor %} {% else %}
-      <p>no posts yet!</p>
+      </h2>
+      <p class="post-meta">by {{ post.author.first_name }} {{ post.author.last_name }}</p>
+
+      {% if post.category %}
+        <span>category:</span>
+        {% for category in post.category.all %}
+          <p class="post-meta">{{ category }}</p>
+        {% endfor %}
+      {% else %}
+        <p class="post-meta">category unknown</p>
       {% endif %}
+
+      <p class="post-meta">published: {{ post.published }}</p>
+      <p class="post-content max-height">{{ post.content }}</p>
+      <a href="{% url 'post_detail' param1=post.slug param2=post.id %}" class="see-more">see more</a>
     </div>
-  </body>
-</html>
+  {% endfor %} {% else %}
+    <p>no posts yet!</p>
+  {% endif %}
+{% endblock %}
