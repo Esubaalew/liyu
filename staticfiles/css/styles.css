@@ -1,0 +1,96 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column; 
+  min-height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.container {
+  text-align: center;
+  max-width: 800px;
+  margin: auto;
+}
+
+h1 {
+  color: #333;
+  font-size: 2em;
+  margin-bottom: 20px;
+  background-color: #0066cc;
+  padding: 10px;
+  border-radius: 8px;
+  color: #fff;
+}
+
+.post-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px auto;
+}
+
+.post-card {
+  background-color: #fff;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  flex: 0 1 calc(33.33% - 20px);
+  text-align: left;
+}
+
+.post-card:hover {
+  transform: scale(1.05);
+}
+
+.post-card h2 {
+  margin-bottom: 10px;
+}
+
+.post-meta {
+  color: #666;
+  font-size: 14px;
+  display: inline-block;
+  margin-bottom: 8px; /* Added margin */
+}
+
+.post-content {
+  margin-top: 20px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 80%;
+}
+
+.post-content pre,
+p {
+  margin-bottom: 10px;
+}
+
+.post-content.max-height {
+  max-height: 100px;
+  overflow: hidden;
+}
+
+.see-more {
+  color: #0066cc;
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
+}
+
+/* Footer Styling */
+footer {
+margin-top: 20px;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+   border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
