@@ -1,0 +1,14 @@
+{
+  "builds": [
+    {
+      "src": "liyu/wsgi.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "liyu/wsgi.py"
+    }
+  ]
+}
