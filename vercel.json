@@ -9,6 +9,6 @@
     {
       "src": "/(.*)",
       "dest": "liyu/wsgi.py"
-    },
+    }
   ]
 }
