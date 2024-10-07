@@ -68,7 +68,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'liyu.wsgi.application'
+WSGI_APPLICATION = 'liyu.wsgi.app'
 
 
 # Database
