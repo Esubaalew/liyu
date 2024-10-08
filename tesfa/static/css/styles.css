@@ -1,27 +1,43 @@
-body {
-  font-family: Arial, sans-serif;
+/* General Reset and Basic Styles */
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: column; 
-  min-height: 100vh;
+}
+
+body {
+  font-family: Arial, sans-serif;
   background-color: #f4f4f4;
 }
 
 .container {
-  text-align: center;
-  max-width: 800px;
+  max-width: 1200px;
   margin: auto;
+  padding: 20px;
+}
+
+/* Header Styles */
+header {
+  background-color: #0066cc;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
 }
 
 h1 {
+  font-size: 2.5em;
+  margin: 0;
+}
+
+/* Main Content Styles */
+main {
+  margin: 20px 0;
+}
+
+h2 {
+  font-size: 1.8em;
   color: #333;
-  font-size: 2em;
-  margin-bottom: 20px;
-  background-color: #0066cc;
-  padding: 10px;
-  border-radius: 8px;
-  color: #fff;
 }
 
 .post-list {
@@ -31,30 +47,26 @@ h1 {
   margin: 20px auto;
 }
 
+/* Post Card Styles */
 .post-card {
   background-color: #fff;
   padding: 20px;
   margin: 10px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex: 1 1 calc(30% - 20px); /* Flex basis for responsiveness */
   transition: transform 0.3s ease-in-out;
-  flex: 0 1 calc(33.33% - 20px);
-  text-align: left;
 }
 
 .post-card:hover {
   transform: scale(1.05);
 }
 
-.post-card h2 {
-  margin-bottom: 10px;
-}
-
 .post-meta {
   color: #666;
   font-size: 14px;
   display: inline-block;
-  margin-bottom: 8px; /* Added margin */
+  margin-bottom: 8px; 
 }
 
 .post-content {
@@ -63,34 +75,45 @@ h1 {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 80%;
+  width: 100%;
 }
 
-.post-content pre,
-p {
-  margin-bottom: 10px;
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .post-card {
+    flex: 1 1 calc(100% - 20px); /* Stack cards on smaller screens */
+  }
+
+  h1 {
+    font-size: 2em; /* Smaller header on mobile */
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
 }
 
-.post-content.max-height {
-  max-height: 100px;
-  overflow: hidden;
-}
-
+/* See More Link */
 .see-more {
   color: #0066cc;
   text-decoration: none;
   font-weight: bold;
+  margin-top: 10px;
   display: block;
 }
 
-/* Footer Styling */
+/* Footer Styles */
 footer {
-margin-top: 20px;
+  margin-top: 20px;
   background-color: #333;
   color: #fff;
   padding: 10px;
   text-align: center;
-  width: 100%;
-   border-radius: 8px;
+  border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Aesthetic Improvements */
+footer p {
+  margin: 0;
 }
