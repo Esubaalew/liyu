@@ -3,16 +3,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!-- Responsive Meta Tag -->
     <title>{% block title %}Liyu - ልዩ{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
 </head>
 <body>
     <div class="container">
-        {% block content %}{% endblock %}
+        <header>
+            <h1>Liyu</h1>
+        </header>
+        <main>
+            {% block content %}{% endblock %}
+        </main>
     </div>
     <footer>
-    <p>&copy; Liyu 2016</p>
-</footer>
-
+        <p>&copy; Liyu 2016</p>
+    </footer>
 </body>
 </html>
