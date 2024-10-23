@@ -75,12 +75,22 @@ WSGI_APPLICATION = 'liyu.wsgi.app'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+import os
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.environ.get('POSTGRES_DATABASE', 'postgres'),
+        'USER': os.environ.get('POSTGRES_USER', 'postgres'),
+        'PASSWORD': os.environ.get('POSTGRES_PASSWORD', 'uo0ENBqapX6I9CP9'),
+        'HOST': os.environ.get('POSTGRES_HOST', 'db.fmexolokntbisbuzuvnb.supabase.co'),
+        'PORT': os.environ.get('POSTGRES_PORT', '6543'),  # Use 6543 as per the provided URL
+        'OPTIONS': {
+            'sslmode': 'require',  # Ensure SSL is required
+        },
     }
 }
+
 
 
 # Password validation
